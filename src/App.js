@@ -1,7 +1,7 @@
-import {useCallback, useEffect, useMemo, useState} from "react";
-import Search from "./components/Search/Search";
-import Chart from "./components/Chart/Chart";
-import Map from "./components/Map/Map";
+import {useCallback, useEffect, useMemo, useState} from 'react'
+import Search from './components/Search/Search'
+import Chart from './components/Chart/Chart'
+import Map from './components/Map/Map'
 
 const App = () => {
   const [data, setData] = useState(null)
@@ -42,7 +42,7 @@ const App = () => {
     <Search query={query} onChange={setQuery}/>
     <Chart data={region || countries}/>
     <Map data={region || countries}/>
-  </>;
+  </>
 }
 
-export default App;
+export default App

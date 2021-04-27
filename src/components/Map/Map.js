@@ -1,6 +1,6 @@
-import React from "react";
-import {MapContainer, Tooltip, TileLayer, CircleMarker} from "react-leaflet"
-import 'leaflet/dist/leaflet.css';
+import React from 'react'
+import {MapContainer, Tooltip, TileLayer, CircleMarker} from 'react-leaflet'
+import 'leaflet/dist/leaflet.css'
 import styles from './Map.module.css'
 
 const Map = React.memo(({data}) => 
@@ -16,7 +16,7 @@ const Map = React.memo(({data}) =>
     ]}>
     <TileLayer
       attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-      url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+      url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
     />
     {data.map((country) =>
       <CircleMarker
@@ -25,8 +25,9 @@ const Map = React.memo(({data}) =>
         pathOptions={{color: 'red'}}
         center={[country.lat, country.long]}>
         <Tooltip direction='top' permanent>
-          <span>{country.key}</span><br/>
-          cases: {country.confirmed}
+          <span>{country.key}</span>
+          <br/>
+          <span>cases: {country.confirmed}</span>
         </Tooltip>
       </CircleMarker>
     )}

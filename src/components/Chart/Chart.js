@@ -1,5 +1,5 @@
-import React, {useEffect, useRef} from 'react';
-import ChartJS from 'chart.js/auto';
+import React, {useEffect, useRef} from 'react'
+import ChartJS from 'chart.js/auto'
 import styles from './Chart.module.css'
 
 const Chart = React.memo(({data}) => {
