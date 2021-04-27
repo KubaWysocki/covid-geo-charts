@@ -1,0 +1,12 @@
+.map {
+  height: 50%;
+  width: 100%;
+}
+
+@media (min-width: 1025px) {
+  .map {
+    margin-top: 3rem;
+    height: calc(100% - 3rem);
+    width: 50%;
+  }
+}

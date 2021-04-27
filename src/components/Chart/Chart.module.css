@@ -1,0 +1,18 @@
+.chart {
+  margin-top: 3rem;
+  width: 100%;
+  height: calc(50% - 3rem);
+  overflow-x: scroll;
+}
+
+.scroll {
+  padding: 0 3%;
+  height: 100%;
+}
+
+@media (min-width: 1025px) {
+  .chart {
+    width: 50%;
+    height: calc(100% - 3rem);
+  }
+}
