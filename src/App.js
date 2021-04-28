@@ -5,7 +5,6 @@ import Map from './components/Map/Map'
 
 const App = () => {
   const [data, setData] = useState(null)
-  const [region, setRegion] = useState(null)
   const [query, setQuery] = useState('')
 
   const apiCall = useCallback(async () => {
@@ -16,17 +15,15 @@ const App = () => {
 
   useEffect(apiCall, [apiCall])
 
-  useEffect(() => {
+  const region = useMemo(() => {
     if(data && query in data) {
-      setRegion(
-        Object.entries(data[query]).reduce((prev, [key, value]) => {
-          if (key === 'All' && value.lat && value.long) return prev.concat({...value, key: query})
-          else if (value.lat && value.long) return prev.concat({...value, key})
-          else return prev
-        }, [])
-      )
+      return Object.entries(data[query]).reduce((prev, [key, value]) => {
+        if (key === 'All' && value.lat && value.long) return prev.concat({...value, key: query})
+        else if (value.lat && value.long) return prev.concat({...value, key})
+        else return prev
+      }, [])
     }
-    else setRegion(null)
+    else return null
   }, [data, query])
 
   const countries = useMemo(() => {
